@@ -21,6 +21,7 @@ public class Epic extends Task {
     public void setSubTasks(ArrayList<SubTask> subTasks) {
         this.subTasks = subTasks;
     }
+
     public LocalDateTime getEndTime() {
         for (SubTask subTask : subTasks) {
             endTime.plusMinutes(subTask.getDuration());
