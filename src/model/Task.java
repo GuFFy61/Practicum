@@ -1,7 +1,8 @@
-package Model;
+package model;
 
 import java.util.Objects;
 import java.time.LocalDateTime;
+import static model.Status.NEW;
 
 public class Task {
     protected String name;
