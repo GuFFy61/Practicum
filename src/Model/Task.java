@@ -26,7 +26,7 @@ public class Task {
     }
 
     public Task() {
-        this("Задача",null,-1,NEW);
+        this("Задача", null, -1, NEW);
     }
 
     public Task(String name, String description, Integer id, Status status, String type) {
@@ -44,7 +44,7 @@ public class Task {
     }
 
     public Task(String name, Integer id) {
-        this(name, "",id,NEW);
+        this(name, "", id, NEW);
     }
 
     public Task(String name, String description, Integer id, Status status) {
@@ -111,8 +111,8 @@ public class Task {
 
     @Override
     public boolean equals(Object o) {
-        if(this == o) return true;
-        if(!(o instanceof Task)) return false;
+        if (this == o) return true;
+        if (!(o instanceof Task)) return false;
         Task task = (Task) o;
         return Objects.equals(getName(), task.getName())
                 && Objects.equals(getDescription(), task.getDescription())
@@ -122,13 +122,13 @@ public class Task {
 
     @Override
     public int hashCode() {
-        return Objects.hash(getName(),getDescription(),getId(),getStatus());
+        return Objects.hash(getName(), getDescription(), getId(), getStatus());
     }
 
     @Override
     public String toString() {
         return type +
-                ", " +name +
+                ", " + name +
                 ", " + description +
                 ", " + id +
                 ", " + status;
