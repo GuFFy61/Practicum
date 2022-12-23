@@ -25,7 +25,7 @@ public class SubTaskController {
     public SubTask create(SubTask subTask, Epic epic) {
         final SubTask newSubTask = new SubTask(subTask.getType(), subTask.getName(),
                 subTask.getDescription(), ++counterIDSubTasks, subTask.getStatus(), epic.getId());
-        if(!subTasks.containsKey(newSubTask.getId())) {
+        if (!subTasks.containsKey(newSubTask.getId())) {
             subTasks.put(newSubTask.getId(), newSubTask);
             epicController.epics.get(epic.getId()).getSubTasks().add(/*newSubTask.getId(),*/ newSubTask));
         } else {
@@ -43,7 +43,7 @@ public class SubTaskController {
     // Обновление задачи по ID
     public SubTask update(SubTask task) {
         final SubTask originalTask = subTasks.get(task.getId());
-        if(originalTask == null) {
+        if (originalTask == null) {
             System.out.println("Подзадачи с таким ID не существует");
             return null;
         }
@@ -80,13 +80,13 @@ public class SubTaskController {
         int counterNew = 0;
         int counterDone = 0;
         for (SubTask subTask : subTasksOfEpic) {
-            if(subTask.getStatus() == Status.NEW) {
+            if (subTask.getStatus() == Status.NEW) {
                 counterNew++;
-            } else if(subTask.getStatus() == Status.DONE) {
+            } else if (subTask.getStatus() == Status.DONE) {
                 counterDone++;
             }
         }
-        if(counterNew == subTasksOfEpic.size()) {
+        if (counterNew == subTasksOfEpic.size()) {
             epicController.epics.get(task.getEpicID()).setStatus(Status.NEW);
         } else if (counterDone == subTasksOfEpic.size()) {
             epicController.epics.get(task.getEpicID()).setStatus(Status.DONE);
