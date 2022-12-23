@@ -3,7 +3,7 @@ package controller;
 import model.Task;
 import java.util.List;
 
-public class HistoryManager {
+public interface HistoryManager {
     // Добавление задачи в историю
     void add(Task task);
 
