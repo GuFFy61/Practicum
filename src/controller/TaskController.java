@@ -1,6 +1,5 @@
 package controller;
 
-import model.Status;
 import model.Task;
 
 import java.util.ArrayList;
@@ -21,7 +20,7 @@ public class TaskController {
     }
 
     // Получение задачи по ID
-    public Task findByID(Integer id) {
+    public Task findById(Integer id) {
         return tasks.get(id);
     }
 
@@ -53,7 +52,7 @@ public class TaskController {
     }
 
     //Удаление задачи по идентификатору
-    public Task deleteByID(Integer id) {
+    public Task deleteById(Integer id) {
         final Task deletedTask = tasks.get(id);
         tasks.remove(id);
         return deletedTask;

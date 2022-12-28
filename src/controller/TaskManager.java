@@ -17,13 +17,13 @@ public interface TaskManager {
     List<SubTask> findAllSubTasksOfEpic(Epic epic);
 
     // Получение подзадачи по идентификатору
-    SubTask findSubTaskByID(Integer id);
+    SubTask findSubTaskById(Integer id);
 
     // Получение задачи по идентификатору
-    Task findTaskByID(Integer id);
+    Task findTaskById(Integer id);
 
     // Получение эпика по идентификатору
-    Epic findEpicByID(Integer id);
+    Epic findEpicById(Integer id);
 
     // Добавление задачи
     Task createTask(Task task);
@@ -35,10 +35,10 @@ public interface TaskManager {
     SubTask createSubTask(SubTask subTask,Epic epic);
 
     // Обновление задачи
-    Task updateTaskByID(Task task);
+    Task updateTaskById(Task task);
 
     // Обновление эпика
-    Epic updateEpicByID(Epic epic);
+    Epic updateEpicById(Epic epic);
 
     // Обновление подзадачи
     SubTask updateSubTaskById(SubTask subTask);
@@ -53,16 +53,16 @@ public interface TaskManager {
     void deleteAllSubTasks();
 
     // Удаление подзадачи по ID
-    void deleteSubTaskByID(Integer id);
+    void deleteSubTaskById(Integer id);
 
     // Удаление эпика по ID
     void deleteEpicById(Integer id);
 
     // Удаление задачи по ID
-    Task deleteTaskByID(Integer id);
+    Task deleteTaskById(Integer id);
 
     // Удаление задачи из истории по ID
-    void removeFromHistoryByID(int id);
+    void removeFromHistoryById(int id);
 
     // Получение истории
     List<Task> getHistory();

@@ -36,7 +36,7 @@ public class SubTaskController {
     }
 
     // Получить подзадачу по Id
-    public SubTask findByID(Integer id) {
+    public SubTask findById(Integer id) {
         return subTasks.get(id);
     }
 
@@ -57,7 +57,7 @@ public class SubTaskController {
     }
 
     // Удаление задачи по идентификатору
-    public SubTask deleteByID(Integer id) {
+    public SubTask deleteById(Integer id) {
         final SubTask deletedTask = subTasks.get(id);
         epicController.epics.get(deletedTask.getEpicID()).getSubTasks().remove(deletedTask);
         subTasks.remove(id);

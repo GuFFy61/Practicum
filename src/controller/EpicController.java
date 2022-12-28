@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class EpicController {
-    HashMap<Integer,Epic> epics = new HashMap<>();
+    HashMap<Integer, Epic> epics = new HashMap<>();
     Integer counterIDEpics = 0;
 
     public HashMap<Integer, Epic> getEpics() {
@@ -26,7 +26,7 @@ public class EpicController {
     // Обновление эипка по Id
     public Epic update(Epic epic) {
         final Epic originalTask = epics.get(epic.getId());
-        if(originalTask == null) {
+        if (originalTask == null) {
             System.out.println("Задачи с таким ID не существует.");
             return null;
         }
@@ -39,7 +39,7 @@ public class EpicController {
     public Epic create(Epic task) {
         final Epic newTask = new Epic(task.getType(), task.getName(),
                 task.getDescription(), ++counterIDEpics, task.getStatus());
-        if(!(epics.containsKey(newTask.getId()))) {
+        if (!(epics.containsKey(newTask.getId()))) {
             epics.put(newTask.getId(), newTask);
         } else {
             System.out.println("Задача с таким ID уже существует.");
