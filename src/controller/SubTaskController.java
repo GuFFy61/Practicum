@@ -27,7 +27,7 @@ public class SubTaskController {
                 subTask.getDescription(), ++counterIDSubTasks, subTask.getStatus(), epic.getId());
         if (!subTasks.containsKey(newSubTask.getId())) {
             subTasks.put(newSubTask.getId(), newSubTask);
-            epicController.epics.get(epic.getId()).getSubTasks().add(/*newSubTask.getId(),*/ newSubTask));
+            epicController.epics.get(epic.getId()).getSubTasks().add(/*newSubTask.getId(),*/ newSubTask);
         } else {
             System.out.println("Подзадача с таким ID уже существует.");
             return null;

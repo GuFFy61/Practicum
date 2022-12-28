@@ -139,7 +139,7 @@ public class InMemoryTasksTaskManager implements TaskManager {
     @Override
     public Task deleteTaskById(Integer id) {
         removeFromHistoryById(id);
-        taskController.deleteById(id);
+        return taskController.deleteById(id);
     }
 
     // Получение задачи из истории по ID
@@ -163,7 +163,7 @@ public class InMemoryTasksTaskManager implements TaskManager {
     // Удаление всей истории
     @Override
     public void removeAllHistory() {
-        inMemoryHistoryManager.removeAll()
+        inMemoryHistoryManager.removeAll();
     }
 
     @Override

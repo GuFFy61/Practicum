@@ -2,6 +2,6 @@ package controller;
 
 public class Managers {
     public static TaskManager getDefault(){
-        return new InMemoryTaskTaskManager();
+        return new InMemoryTasksTaskManager();
     }
 }

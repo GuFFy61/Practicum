@@ -26,7 +26,7 @@ public class Task {
         this.endTime = startTime.plusMinutes(duration);
     }
 
-    public Task() {
+    public Task(String name, String description, Integer id) {
         this("Задача", null, -1, NEW);
     }
 
@@ -38,7 +38,7 @@ public class Task {
         this.type = type;
     }
 
-    public Task(String name, String description, Integer id) {
+    public Task(String name, String description, String taskDescription, Integer id, Status status) {
         this.name = name;
         this.description = description;
         this.id = id;
