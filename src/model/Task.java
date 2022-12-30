@@ -15,7 +15,7 @@ public class Task {
     protected LocalDateTime endTime;
 
     public Task(String name, String description, Integer id, Status status, String type,
-                LocalDateTime startTime, Integer duration, LocalDateTime endTime) {
+                LocalDateTime startTime, Integer duration) {
         this.name = name;
         this.description = description;
         this.id = id;
@@ -27,32 +27,15 @@ public class Task {
     }
 
     public Task(String name, String description, Integer id) {
-        this("Задача", null, -1, NEW);
+        this("Задача", null, null, -1, NEW);
     }
 
-    public Task(String name, String description, Integer id, Status status, String type) {
+    public Task(String type, String name, String description, Integer id, Status status) {
         this.name = name;
         this.description = description;
         this.id = id;
         this.status = status;
         this.type = type;
-    }
-
-    public Task(String name, String description, String taskDescription, Integer id, Status status) {
-        this.name = name;
-        this.description = description;
-        this.id = id;
-    }
-
-    public Task(String name, Integer id) {
-        this(name, "", id, NEW);
-    }
-
-    public Task(String name, String description, Integer id, Status status) {
-        this.name = name;
-        this.description = description;
-        this.id = id;
-        this.status = status;
     }
 
     public Task(Task task) {

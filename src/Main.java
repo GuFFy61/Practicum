@@ -14,7 +14,7 @@ public class Main {
         final TaskManager taskManager = Managers.getDefault();
 
         System.out.println("Метод createTask(task). Начинаем тестирование.");
-        final Task task = new Task();
+        final Task task = new Task("Новая задача",null,-1);
         System.out.println("Создаем 2 задачи");
         final Task createdTask = taskManager.createTask(task);
         final Task createdTask1 = taskManager.createTask(task);
@@ -116,7 +116,7 @@ public class Main {
         final SubTask subTask4 = taskManager.createSubTask(subTask, createdEpic1);
         System.out.println(subTask3);
         System.out.println(subTask4);
-        if (subTask1.getEpicID().equals(subTask2.getEpicID()) && subTask3.getEpicID(subTask4.getEpicID()))
+        if (subTask1.getEpicID().equals(subTask2.getEpicID()) && subTask3.getEpicID().equals(subTask4.getEpicID()))
             System.out.println("Метод createSubTask(subTask,epic) работает штатно");
         else
             System.out.println("Метод createSubTask(subTask,epic) НЕ работает");
